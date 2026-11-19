@@ -39,5 +39,24 @@ async function getWeather() {
     "" +
     data.timezone;
   weatherArea.appendChild(time);
+
+  //Slogan-style message
+  const messages = [
+    "🌮 Perfect weather for a craving!",
+    "🍔 Hungry yet? We thought so.",
+    "🚚 The forecast calls for delicious food!",
+    "🌤️ Today's special: sunshine and great eats.",
+    "😋 Serving smiles, one craving at a time.",
+    "🔥 Fresh food, no matter the forecast!",
+  ];
+
+  const slogan = document.createElement("p");
+  slogan.className = "fs-3 fw-bold text-warning";
+
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+  slogan.textContent = randomMessage;
+
+  weatherArea.appendChild(slogan);
 }
 button.addEventListener("click", getWeather);
